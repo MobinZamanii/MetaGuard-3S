@@ -28,6 +28,9 @@ Our methodology achieved a significant leap in diagnostic sensitivity:
 * **186 Patients Rescued:** 36.3% of previously missed cases (False Negatives) were successfully recovered through the Uncertainty Zone.
 * **1,756 False Alarms Prevented:** Reducing unnecessary biopsies and patient anxiety by 32.8%.
 
+## Dataset Availability
+Access to the dataset was formally granted by the National Cancer Institute (NCI) for research purposes. Due to the Data Use Agreement (DUA), the raw data cannot be publicly redistributed. Researchers interested in the data should apply for access directly through the official NCI portal.
+
 ## 🛠️ Project Structure
 ```text
 ├── data/               # (Simulated/Anonymized) Clinical datasets
