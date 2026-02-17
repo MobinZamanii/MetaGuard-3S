@@ -1,0 +1,25 @@
+Variable,Model,HR,95% CI,P-value
+Age_Numeric,Univariate,1.03,1.03-1.03,<0.001
+T_Stage_Simple_T2,Univariate,1.37,1.35-1.38,<0.001
+T_Stage_Simple_T3,Univariate,1.97,1.94-2.01,<0.001
+T_Stage_Simple_T4,Univariate,4.62,4.52-4.72,<0.001
+T_Stage_Simple_Unknown,Univariate,1.86,1.82-1.90,<0.001
+N_Stage_Simple_N1,Univariate,1.37,1.35-1.38,<0.001
+N_Stage_Simple_N2,Univariate,1.89,1.85-1.93,<0.001
+N_Stage_Simple_N3,Univariate,2.87,2.81-2.94,<0.001
+N_Stage_Simple_Other,Univariate,3.54,3.42-3.66,<0.001
+Grade_Simple_II,Univariate,0.94,0.92-0.95,<0.001
+Grade_Simple_III,Univariate,1.34,1.32-1.37,<0.001
+Grade_Simple_Unknown,Univariate,1.09,1.08-1.11,<0.001
+Age_Numeric,Multivariate,1.03,1.03-1.03,<0.001
+T_Stage_Simple_T2,Multivariate,1.34,1.33-1.36,<0.001
+T_Stage_Simple_T3,Multivariate,1.86,1.82-1.90,<0.001
+T_Stage_Simple_T4,Multivariate,3.66,3.58-3.74,<0.001
+T_Stage_Simple_Unknown,Multivariate,1.66,1.62-1.70,<0.001
+N_Stage_Simple_N1,Multivariate,1.32,1.30-1.34,<0.001
+N_Stage_Simple_N2,Multivariate,1.65,1.62-1.69,<0.001
+N_Stage_Simple_N3,Multivariate,2.26,2.21-2.32,<0.001
+N_Stage_Simple_Other,Multivariate,2.69,2.59-2.78,<0.001
+Grade_Simple_II,Multivariate,0.93,0.91-0.94,<0.001
+Grade_Simple_III,Multivariate,1.30,1.27-1.33,<0.001
+Grade_Simple_Unknown,Multivariate,1.08,1.07-1.09,<0.001
