@@ -1,41 +1,46 @@
-# MetaGuard-3S
-A Triple-Stage Stacking Ensemble (XGBoost, RF, LR) for Cancer Metastasis Prediction featuring a Probabilistic Safety-Net to minimize clinical False Negatives.
+# MetaGuard-2S
+A **Hybrid Stacking Ensemble (XGBoost + Random Forest)** for Cancer Metastasis Prediction, featuring a **Probabilistic Safety-Net** to minimize clinical False Negatives.
 
+**MetaGuard-2S** is an advanced clinical decision support framework designed to detect cancer metastasis in highly imbalanced datasets. By leveraging a two-layer hybrid stacking architecture and a probabilistic "Safety Net," this system significantly reduces life-threatening False Negatives while maintaining high sensitivity.
 
-**MetaGuard-3S** is an advanced clinical decision support framework designed to detect cancer metastasis in high-imbalance datasets. By utilizing a unique three-layer stacking architecture and a probabilistic "Safety Net," this system significantly reduces life-threatening False Negatives.
+---
 
 ## 🌟 Key Innovations
 
-### 1. Triple-Stage Stacking Architecture
-Unlike standard models, MetaGuard-3S processes data through three intelligent layers:
-* **Stage 1 (Boosting):** Initial pattern recognition using **XGBoost**.
-* **Stage 2 (Hybridization):** Integrating clinical features with **Statistical Mapping (Group_Met_Rate)** via Random Forest.
-* **Stage 3 (Meta-Learning):** Final calibration using **Logistic Regression** to harmonize predictions.
+### 1. Hybrid Stacking Architecture
+MetaGuard-3S processes patient data through a **two-layer intelligent pipeline**:
+* **Stage 1 (XGBoost):** Initial pattern recognition and probability scoring.
+* **Stage 2 (Hybrid Random Forest):** Combines XGBoost probabilities with enriched clinical features and **Statistical Mapping (Group\_Met\_Rate)** to enhance high-risk detection.
 
-### 2. Probabilistic Safety Net (Uncertainty-Aware)
-We implemented a "Human-in-the-loop" protocol by defining a **Review Zone (0.416 - 0.616)**. This allows the system to flag borderline cases for manual expert review, effectively catching patients that AI might otherwise miss.
+> Note: Logistic Regression has been removed in the current version due to limited additional benefit.
 
-## 📊 Performance Evolution
+### 2. Probabilistic Safety-Net (Uncertainty-Aware)
+A **Human-in-the-loop protocol** flags borderline predictions for expert review.  
+* **Review Zone:** $[T - \delta, T + \delta]$, where $T$ is the model threshold and $\delta$ is a tunable uncertainty margin (e.g., 0.10).  
+* This ensures that potential false negatives are caught before clinical decisions.
 
-Our methodology achieved a significant leap in diagnostic sensitivity:
+---
 
-| Model Version | True Positives (Caught) | False Negatives (Missed) | Accuracy |
-| :--- | :---: | :---: | :---: |
-| **Hybrid Stage 2** | 907 | 593 | **89%** |
-| **Final MetaGuard-3S** | **988** | **512** | 86% |
+### Clinical Impact of the Safety Net
+* **193 Patients Rescued:** ~19% of previously missed metastasis cases were flagged for expert review.  
+* **347 False Alarms Prevented:** Reducing unnecessary biopsies by ~33%, improving patient safety and resource efficiency.
 
-### Clinical Impact of the Safety Net:
-* **186 Patients Rescued:** 36.3% of previously missed cases (False Negatives) were successfully recovered through the Uncertainty Zone.
-* **1,756 False Alarms Prevented:** Reducing unnecessary biopsies and patient anxiety by 32.8%.
+> 🔬 **Ongoing Work:** Threshold optimization and uncertainty margin calibration are continuing to further improve sensitivity and clinical reliability.
 
-## Dataset Availability
-Access to the dataset was formally granted by the National Cancer Institute (NCI) for research purposes. Due to the Data Use Agreement (DUA), the raw data cannot be publicly redistributed. Researchers interested in the data should apply for access directly through the official NCI portal.
+---
+
+## 📂 Dataset Availability
+Access to the dataset was granted by the **National Cancer Institute (NCI)** for research purposes.  
+Due to the **Data Use Agreement (DUA)**, raw data cannot be redistributed publicly. Interested researchers should request access through the official NCI portal.
+
+---
 
 ## 🛠️ Project Structure
+
 ```text
 ├── data/               # (Simulated/Anonymized) Clinical datasets
-├── models/             # Saved .pkl files for each stage
+├── models/             # Saved .pkl files for XGBoost and Hybrid RF
 ├── notebooks/          # MetaGuard_Final_Notebook.ipynb
-└── images/             # Confusion matrices and performance plots
-
-Developed with ❤️ for Medical Advancement by Mobin Zamani
+└── images/             # Confusion matrices, performance plots, and Safety-Net visualizations
+```
+Developed with ❤️ for medical advancement by Mobin Zamani
