@@ -7,11 +7,6 @@ A **Hybrid Stacking Ensemble (XGBoost + Random Forest)** for Cancer Metastasis P
 
 ## 🌟 Key Innovations
 
-### 1. Hybrid Stacking Architecture
-MetaGuard-3S processes patient data through a **two-layer intelligent pipeline**:
-* **Stage 1 (XGBoost):** Initial pattern recognition and probability scoring.
-* **Stage 2 (Hybrid Random Forest):** Combines XGBoost probabilities with enriched clinical features and **Statistical Mapping (Group\_Met\_Rate)** to enhance high-risk detection.
-
 > Note: Logistic Regression has been removed in the current version due to limited additional benefit.
 
 ### 2. Probabilistic Safety-Net (Uncertainty-Aware)
